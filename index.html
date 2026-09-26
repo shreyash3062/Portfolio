@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreyash Mali | Web & Full Stack Developer</title>
+  <meta name="description" content="Shreyash Mali - Web & Full Stack Developer portfolio. HTML, CSS, JavaScript projects, services and contact." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="left">Shreyash's Portfolio</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="right" id="navLinks">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ================= HOME / HERO ================= -->
+    <section class="firstsection" id="home">
+      <div class="leftsection">
+        <h1 class="hero-heading">Hi, I'm Shreyash. I am a web developer.<span id="element"></span></h1>
+        <div class="hero-actions">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+      <div class="rightsection">
+        <img src="shreyash.png" alt="Shreyash Mali" />
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <p class="section-sub">Get to know me</p>
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hi, I'm <strong>Shreyash Mali</strong>, a passionate Web &amp; Full Stack Developer
+            with a strong interest in building modern, responsive, and user-friendly web
+            applications.
+          </p>
+          <p>
+            I have a solid foundation in HTML, CSS, and JavaScript, and I enjoy turning ideas
+            and designs into clean, functional, and engaging digital experiences. I focus on
+            writing well-structured code and creating websites that are responsive across
+            different devices.
+          </p>
+          <p>
+            I'm continuously improving my skills in front-end and full-stack development,
+            exploring modern technologies, and working on practical projects that help me
+            strengthen my development and problem-solving abilities. My goal is to grow as a
+            professional Full Stack Developer and contribute to innovative software projects.
+          </p>
+        </div>
+
+        <div class="about-bring">
+          <h3>What I bring</h3>
+          <ul class="bring-list">
+            <li><span class="bring-icon">💻</span> Web Development</li>
+            <li><span class="bring-icon">🎨</span> Responsive &amp; Modern UI Design</li>
+            <li><span class="bring-icon">⚡</span> HTML, CSS &amp; JavaScript</li>
+            <li><span class="bring-icon">🔧</span> Problem Solving &amp; Debugging</li>
+            <li><span class="bring-icon">📱</span> Mobile-Friendly Websites</li>
+            <li><span class="bring-icon">🚀</span> Continuous Learning &amp; Development</li>
+            <li><span class="bring-icon">🌐</span> Interest in Full Stack Development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- ================= SERVICES ================= -->
+    <section class="services" id="services">
+      <p class="section-sub">What I do</p>
+      <h2 class="section-title">Services</h2>
+      <p class="section-intro">
+        I build modern, responsive, and user-friendly web experiences that combine clean
+        design with functional development.
+      </p>
+
+      <div class="card-grid">
+
+        <div class="card service-card">
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 17l-5-5 5-5M15 7l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>Building modern, functional, and user-friendly websites with clean, well-structured code and a focus on performance and usability.</p>
+          <a href="#contact" class="card-link">Learn more <span>&rarr;</span></a>
+        </div>
+
+        <div class="card service-card">
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Front-End Development</h3>
+          <p>Creating attractive and interactive user interfaces with HTML, CSS, and JavaScript &mdash; clean layouts and a smooth user experience.</p>
+          <a href="#contact" class="card-link">Learn more <span>&rarr;</span></a>
+        </div>
+
+        <div class="card service-card">
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="9" height="20" rx="1.5"/><rect x="15" y="7" width="6" height="13" rx="1.2"/></svg>
+          </div>
+          <h3>Responsive Web Design</h3>
+          <p>Websites that work properly on desktop, tablet, and mobile &mdash; mobile-first layouts with a consistent design across screen sizes.</p>
+          <a href="#contact" class="card-link">Learn more <span>&rarr;</span></a>
+        </div>
+
+        <div class="card service-card">
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>JavaScript Development</h3>
+          <p>Interactive website features, dynamic content and user interactions &mdash; form validation, DOM manipulation, and client-side functionality.</p>
+          <a href="#contact" class="card-link">Learn more <span>&rarr;</span></a>
+        </div>
+
+      </div>
+
+      <div class="cta-strip">
+        <div>
+          <h3>Have a project in mind?</h3>
+          <p>Let's build something great together.</p>
+        </div>
+        <a href="#contact" class="btn">Contact Me</a>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="experience" id="experience">
+      <p class="section-sub">What I have done so far</p>
+      <h2 class="section-title">Work Experiences</h2>
+
+      <div class="exp-list">
+        <div class="exp-card">
+          <div class="exp-header">
+            <h3 class="exp-title">Full Stack Development Program</h3>
+            <span class="exp-date">Dec 2025 &ndash; Jan 2026</span>
+          </div>
+          <p class="exp-desc">
+            Completed a hands-on internship building AI-integrated full-stack web
+            applications, gaining practical experience with AI-assisted development
+            workflows and cloud-based deployment.
+          </p>
+        </div>
+        <!-- To add another experience, copy the whole exp-card block and paste it here -->
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="projects" id="projects">
+      <p class="section-sub">A few things I've built</p>
+      <h2 class="section-title">Projects</h2>
+
+      <div class="card-grid">
+
+        <div class="card project-card">
+          <div class="project-top">
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <h3>Snake Game</h3>
+          <p>A classic Snake game built with vanilla JavaScript, featuring grid-based movement, collision detection and score tracking.</p>
+          <div class="project-links">
+            <a href="https://shreyash3062.github.io/Snake-Game/" target="_blank" rel="noopener noreferrer" class="btn btn-sm">Live Demo</a>
+            <a href="https://github.com/shreyash3062/Snake-Game" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Code</a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-top">
+            <span class="project-tag">HTML / CSS / JS</span>
+          </div>
+          <h3>Weather App</h3>
+          <p>A responsive weather application that fetches live weather data and displays it in a clean, easy-to-read interface.</p>
+          <div class="project-links">
+            <a href="https://shreyash3062.github.io/Weather-App/" target="_blank" rel="noopener noreferrer" class="btn btn-sm">Live Demo</a>
+            <a href="https://github.com/shreyash3062/Weather-App" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">Code</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-more">
+        <p>More projects are on the way as I keep building and learning.</p>
+        <a href="https://github.com/shreyash3062?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View All Projects on GitHub</a>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+      <p class="section-sub">Contact Me</p>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-intro">
+        Have a project, internship opportunity, or collaboration in mind? I'd love to hear
+        from you. Feel free to reach out and let's connect.
+      </p>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+
+          <a class="card contact-card" href="mailto:malishreyash2005@gmail.com">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p>Feel free to reach out through email for opportunities, projects, or collaborations.</p>
+              <span class="contact-value">malishreyash2005@gmail.com</span>
+            </div>
+          </a>
+
+          <div class="card contact-card">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </div>
+            <div>
+              <h3>Location</h3>
+              <p>Based in</p>
+              <span class="contact-value">Maharashtra, India</span>
+            </div>
+          </div>
+
+          <a class="card contact-card" href="https://www.linkedin.com/in/shreyashmali/" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7.5v.01M11 17v-4.5a2 2 0 0 1 4 0V17M11 12.5V17" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h3>LinkedIn</h3>
+              <p>Connect with me</p>
+              <span class="contact-value">in/shreyashmali</span>
+            </div>
+          </a>
+
+          <a class="card contact-card" href="https://github.com/shreyash3062" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.92.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            </div>
+            <div>
+              <h3>GitHub</h3>
+              <p>View my projects</p>
+              <span class="contact-value">github.com/shreyash3062</span>
+            </div>
+          </a>
+
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" />
+            <span class="form-error" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Enter subject" />
+            <span class="form-error" id="subjectError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..."></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+
+          <button type="submit" class="btn btn-full">Send Message <span>&rarr;</span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="cta-strip">
+        <div>
+          <h3>Let's Build Something Together</h3>
+          <p>Whether it's a web project, internship opportunity, or collaboration, I'm always open to connecting.</p>
+        </div>
+        <a href="#contactForm" class="btn" id="letsConnect">Let's Connect <span>&rarr;</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-col">
+        <h3>Shreyash's Developer Portfolio</h3>
+        <p class="footer-tag">Web &amp; Full Stack Developer</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:malishreyash2005@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/shreyashmali/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/shreyash3062" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-rights">
+      www.shreyashsportfolio.com &copy; 2026 All Rights Reserved
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
