@@ -4,7 +4,7 @@ A personal developer portfolio built with plain HTML, CSS and JavaScript — no 
 
 ## 🔗 Live Demo
 
-**[https://shreyash-portfolio.onrender.com](https://shreyash-portfolio.onrender.com)**
+**[https://shreyash-portfolio-vapx.onrender.com/](https://shreyash-portfolio.onrender.com)**
 
 ## About
 
