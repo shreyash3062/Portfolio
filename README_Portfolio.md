@@ -6,8 +6,6 @@ A personal developer portfolio built with plain HTML, CSS and JavaScript — no 
 
 **[https://shreyash-portfolio.onrender.com](https://shreyash-portfolio.onrender.com)**
 
-> Replace the link above with your actual Render URL once your site is deployed (Render shows it on your service's dashboard page, and it usually looks like `https://<your-service-name>.onrender.com`).
-
 ## About
 
 This portfolio introduces me as a Web & Full Stack Developer and includes:
