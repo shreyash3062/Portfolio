@@ -49,21 +49,24 @@ if (letsConnect) {
 }
 
 // ============================================================
-// Contact form validation
+// Contact form: validation + sending via Web3Forms
 //
-// NOTE: There is no backend or email service connected yet.
-// On a valid submission this opens the visitor's email client
-// with the message pre-filled (a mailto: link), so nothing is
-// silently "sent" without the visitor's knowledge.
+// Messages are POSTed to Web3Forms, which emails them to you.
+// The visitor stays on your site and never needs an email app.
 //
-// To connect a real backend or email API (e.g. Formspree,
-// EmailJS, or your own server) later, replace the contents of
-// the `sendMessage()` function below and keep the validation
-// logic above it as-is.
+// SETUP: get a free access key at https://web3forms.com
+// (enter your email, the key is sent to your inbox), then paste
+// it below. This key is public by design, so it is safe here.
 // ============================================================
+const WEB3FORMS_ACCESS_KEY = '94ff8b20-3cea-406d-a08f-f0c805261ea7';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+
   const fields = {
     name: {
       input: document.getElementById('name'),
@@ -117,40 +120,81 @@ if (contactForm) {
     });
   });
 
-  function sendMessage(data) {
-    const to = 'malishreyash2005@gmail.com';
-    const subject = encodeURIComponent(data.subject);
-    const body = encodeURIComponent(
-      `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
-    );
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  function setStatus(text, color) {
+    statusEl.textContent = text;
+    statusEl.style.color = color;
   }
 
-  contactForm.addEventListener('submit', (event) => {
+  function setSending(isSending) {
+    submitBtn.disabled = isSending;
+    submitBtn.style.opacity = isSending ? '0.7' : '';
+    submitBtn.style.cursor = isSending ? 'not-allowed' : '';
+    submitBtn.firstChild.textContent = isSending ? 'Sending... ' : 'Send Message ';
+  }
+
+  async function sendMessage(data) {
+    const response = await fetch(WEB3FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        from_name: 'Portfolio Contact Form',
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+        botcheck: data.botcheck
+      })
+    });
+
+    const result = await response.json();
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || 'Request failed');
+    }
+    return result;
+  }
+
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const results = Object.keys(fields).map((key) => validateField(key));
-    const isValid = results.every(Boolean);
-    const statusEl = document.getElementById('formStatus');
-
-    if (!isValid) {
-      statusEl.textContent = 'Please fix the highlighted fields above.';
-      statusEl.style.color = '#ff8585';
+    if (!results.every(Boolean)) {
+      setStatus('Please fix the highlighted fields above.', '#ff8585');
       return;
     }
+
+    if (WEB3FORMS_ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
+      console.error('Contact form: add your Web3Forms access key in script.js');
+      setStatus('The contact form is not configured yet. Please email me directly instead.', '#ff8585');
+      return;
+    }
+
+    const honeypot = contactForm.querySelector('input[name="botcheck"]');
 
     const data = {
       name: fields.name.input.value.trim(),
       email: fields.email.input.value.trim(),
       subject: fields.subject.input.value.trim(),
-      message: fields.message.input.value.trim()
+      message: fields.message.input.value.trim(),
+      botcheck: honeypot ? honeypot.checked : false
     };
 
-    sendMessage(data);
+    setSending(true);
+    setStatus('Sending your message...', '#8fa3ff');
 
-    statusEl.textContent =
-      "Your email app should now open with this message ready to send. Prefer a form that sends without leaving the page? Connect a service like Formspree or EmailJS in script.js.";
-    statusEl.style.color = '#8fa3ff';
-    contactForm.reset();
+    try {
+      await sendMessage(data);
+      setStatus("Thank you! Your message has been sent. I'll get back to you soon.", '#6ee7a8');
+      contactForm.reset();
+      Object.keys(fields).forEach((key) => showFieldError(fields[key], ''));
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setStatus(
+        'Sorry, something went wrong and your message was not sent. Please try again, or email me at malishreyash2005@gmail.com.',
+        '#ff8585'
+      );
+    } finally {
+      setSending(false);
+    }
   });
 }
